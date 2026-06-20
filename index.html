@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">Pokédex</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-4 mx-auto">
+
+            <select id="generation" class="form-select">
+                <option value="0,151">Primera Generación</option>
+                <option value="151,100">Segunda Generación</option>
+                <option value="251,135">Tercera Generación</option>
+                <option value="386,107">Cuarta Generación</option>
+                <option value="493,156">Quinta Generación</option>
+            </select>
+
+        </div>
+    </div>
+
+    <div id="pokemonList" class="row g-3"></div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="pokemonModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 id="pokemonTitle"></h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="text-center mb-3">
+                    <img id="pokemonImage" class="img-fluid">
+                </div>
+
+                <p id="pokemonInfo"></p>
+
+                <h5>Tipos</h5>
+                <p id="pokemonTypes"></p>
+
+                <h5>Habilidades</h5>
+                <p id="pokemonAbilities"></p>
+
+                <h5>Movimientos</h5>
+                <p id="pokemonMoves"></p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
