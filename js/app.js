@@ -52,26 +52,28 @@ function mostrarPokemons(lista){
 
         let nombre = pokemon.name;
 
-        let numero = String(index + 1).padStart(3, '0');;
+        let partes = pokemon.url.split("/");
+
+        let numero = partes[6];
 
         let card = document.createElement("div");
 
         card.className = "col-lg-2 col-md-3 col-6";
 
         card.innerHTML = `
-            <div class="card h-100">
+        <div class="card h-100">
 
-                <img
-                    src="https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/${nombre}.png"
-                    class="card-img-top"
-                >
+    <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${numero}.png"
+        class="card-img-top"
+    >
 
-                <div class="card-body text-center">
-                    <h6>${nombre.toUpperCase()}</h6>
-                </div>
+         <div class="card-body text-center">
+          <h6>${nombre.toUpperCase()}</h6>
+         </div>
 
-            </div>
-        `;
+    </div>
+    `;
 
         card.addEventListener("click", ()=>{
 
