@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Entrenador – Pokédex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Pokédex</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Pokédex</a></li>
+                <li class="nav-item"><a class="nav-link active" href="entrenadores.html">Entrenadores</a></li>
+                <li class="nav-item"><a class="nav-link" href="equipos.html">Equipos</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+    <div class="mb-4">
+        <a href="entrenadores.html" class="btn btn-outline-secondary btn-sm">
+            ← Volver a Entrenadores
+        </a>
+    </div>
+
+    <div class="form-card">
+
+        <h2 class="section-title">Nuevo Entrenador</h2>
+
+        <!-- Alerta éxito -->
+        <div id="alertaExito" class="alert alert-success d-none" role="alert">
+            ✅ Entrenador guardado correctamente. Redirigiendo...
+        </div>
+
+        <form id="formEntrenador" novalidate>
+
+            <!-- Nombre -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="nombre">Nombre y Apellidos</label>
+                <input type="text" id="nombre" class="form-control"
+                       placeholder="Ej: Ash Ketchum" required>
+            </div>
+
+            <!-- Sexo -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="sexo">Sexo</label>
+                <select id="sexo" class="form-select" required>
+                    <option value="">-- Seleccioná --</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </select>
+            </div>
+
+            <!-- Residencia -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="residencia">Lugar de Residencia</label>
+                <input type="text" id="residencia" class="form-control"
+                       placeholder="Ej: Ciudad Paleta" required>
+            </div>
+
+            <!-- Foto URL -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="fotoUrl">URL de la Foto</label>
+                <input type="url" id="fotoUrl" class="form-control"
+                       placeholder="https://...">
+                <div class="form-text">Pegá el enlace directo a una imagen del entrenador.</div>
+            </div>
+
+            <!-- Vista previa foto -->
+            <div class="mb-4 text-center">
+                <img id="previewFoto" src="" class="d-none rounded-circle"
+                     style="width:120px;height:120px;object-fit:cover;border:3px solid #ffc107"
+                     alt="Vista previa">
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-danger fw-bold btn-lg">
+                    💾 Guardar Entrenador
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/db.js"></script>
+<script src="js/agregar-entrenador.js"></script>
+</body>
+</html>
