@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Equipo – Pokédex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">🔴 Pokédex</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Pokédex</a></li>
+                <li class="nav-item"><a class="nav-link" href="entrenadores.html">Entrenadores</a></li>
+                <li class="nav-item"><a class="nav-link active" href="equipos.html">Equipos</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+    <div class="mb-4">
+        <a href="equipos.html" class="btn btn-outline-secondary btn-sm">
+            ← Volver a Equipos
+        </a>
+    </div>
+
+    <div class="form-card">
+
+        <h2 class="section-title">Nuevo Equipo</h2>
+
+        <div id="alertaExito" class="alert alert-success d-none">
+            ✅ Equipo guardado correctamente. Redirigiendo...
+        </div>
+
+        <form id="formEquipo" novalidate>
+
+            <!-- Nombre del equipo -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="nombreEquipo">Nombre del Equipo</label>
+                <input type="text" id="nombreEquipo" class="form-control"
+                       placeholder="Ej: Equipo Fuego" required>
+            </div>
+
+            <!-- Imagen del grupo -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="imagenEquipo">URL de la Imagen del Equipo</label>
+                <input type="url" id="imagenEquipo" class="form-control"
+                       placeholder="https://...">
+            </div>
+
+            <!-- Entrenador -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="entrenadorSelect">Entrenador Encargado</label>
+                <select id="entrenadorSelect" class="form-select" required>
+                    <option value="">Cargando entrenadores...</option>
+                </select>
+                <div class="form-text">
+                    Si no hay entrenadores,
+                    <a href="agregar-entrenador.html">creá uno primero</a>.
+                </div>
+            </div>
+
+            <!-- Buscador de Pokémon -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Agregar Pokémon (máx. 6)</label>
+                <input type="text" id="buscarPokemon" class="form-control mb-2"
+                       placeholder="Escribí el nombre exacto en inglés (ej: pikachu)">
+                <div id="sugerenciasPokemon" class="mt-1"></div>
+            </div>
+
+            <!-- Contador y lista de Pokémon elegidos -->
+            <div class="mb-4">
+                <p id="contadorPk" class="text-muted small mb-2">0/6 Pokémon seleccionados</p>
+                <div id="pokemonesElegidos"></div>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-danger fw-bold btn-lg">
+                    💾 Guardar Equipo
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/db.js"></script>
+<script src="js/agregar-equipo.js"></script>
+</body>
+</html>
